@@ -36,7 +36,7 @@ pipeline {
     }
     stage('Test on Debian'){
       agent{
-        docker 'openjdk8u121-jre'
+        docker 'openjdk:8u121-jre'
       }
       steps{
         sh "curl $JENKINS_IP/rectangles/all/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar -o rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar"
